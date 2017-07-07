@@ -1,0 +1,3 @@
+module DeviseEmails
+  # Your code goes here...
+end
