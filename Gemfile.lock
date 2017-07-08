@@ -145,6 +145,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  devise
   devise_emails!
   rspec-rails
   sqlite3

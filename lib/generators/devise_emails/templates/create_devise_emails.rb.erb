@@ -1,0 +1,13 @@
+class CreateDeviseEmails < ActiveRecord::Migration<%= "[#{Rails::VERSION::STRING[0..2]}]" %>
+  def change
+    create_table :emails do |t|
+      t.string     :address, null: false
+      t.references :emailable, polymorphic: true, null: false
+      t.integer    :usage_count, default: 0, null: false
+
+      t.timestamps
+    end
+    add_index :emails, :address
+    add_index :emails, [:emailable_id, :emailable_type]
+  end
+end
